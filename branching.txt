@@ -1,0 +1,7 @@
+
+    1 jevi 2 website banavi hoy to jema content alag hoy pan structer sem hoy temne ek sathe git kari ne asanithi handel kari shakay je branching kahevay chhe.branching branch alag hoy pan teni je main line ne gadbad karay vagar kam tay tene branching kahe chhe.
+
+    2:- you can use 1 branch at a time
+        commands work on active branch
+
+        
