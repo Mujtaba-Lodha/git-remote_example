@@ -4,4 +4,442 @@
     2:- you can use 1 branch at a time
         commands work on active branch
 
+   Microsoft Windows [Version 10.0.19045.3208]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\DELL>cd c:\
+
+c:\>cd git tutorial
+
+c:\git tutorial> dir
+ Volume in drive C has no label.
+ Volume Serial Number is 2EFE-2F6E
+
+ Directory of c:\git tutorial
+
+06-08-2023  15:35    <DIR>          .
+06-08-2023  15:35    <DIR>          ..
+06-08-2023  14:31            16,068 git tutorials.txt
+06-08-2023  15:41               558 index.html
+06-08-2023  15:34                62 index.js
+               3 File(s)         16,688 bytes
+               2 Dir(s)  79,517,138,944 bytes free
+
+c:\git tutorial> git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+c:\git tutorial> git add index.html
+
+c:\git tutorial> git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+
+c:\git tutorial> git log
+commit e0e9a4fbad391649fd23eac0e9092a013f7b8a7f (HEAD -> master)
+Author: mujtaba <lodhamujtaba@gmail.com>
+Date:   Sun Aug 6 15:36:27 2023 +0530
+
+    some file add and deleted
+
+commit 77c37951aea5aee66bdf465054ffa1479abd1987
+Author: mujtaba <lodhamujtaba@gmail.com>
+Date:   Sun Aug 6 15:30:19 2023 +0530
+
+    second commit
+
+commit 5437e6607993118b2bd2ae89ee067b9f37ce7725 (origin/master)
+Author: mujtaba <lodhamujtaba@gmail.com>
+Date:   Sun Aug 6 13:52:21 2023 +0530
+
+    first commit
+
+c:\git tutorial> git branch
+* master
+
+c:\git tutorial> git checkout 77c37951aea5aee66bdf465054ffa1479abd1987
+Note: switching to '77c37951aea5aee66bdf465054ffa1479abd1987'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 77c3795 second commit
+M       index.html
+
+c:\git tutorial> git status
+HEAD detached at 77c3795
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+
+c:\git tutorial> git log
+commit 77c37951aea5aee66bdf465054ffa1479abd1987 (HEAD)
+Author: mujtaba <lodhamujtaba@gmail.com>
+Date:   Sun Aug 6 15:30:19 2023 +0530
+
+    second commit
+
+commit 5437e6607993118b2bd2ae89ee067b9f37ce7725 (origin/master)
+Author: mujtaba <lodhamujtaba@gmail.com>
+Date:   Sun Aug 6 13:52:21 2023 +0530
+
+    first commit
+
+c:\git tutorial> git checkout  77c37951aea5aee66bdf465054ffa1479abd1987
+HEAD is now at 77c3795 second commit
+M       index.html
+
+c:\git tutorial> git status
+HEAD detached at 77c3795
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+
+c:\git tutorial> git checkout master
+Previous HEAD position was 77c3795 second commit
+Switched to branch 'master'
+M       index.html
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+c:\git tutorial>git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+
+c:\git tutorial>q
+'q' is not recognized as an internal or external command,
+operable program or batch file.
+
+c:\git tutorial> git log --graph --oneline
+* e0e9a4f (HEAD -> master) some file add and deleted
+* 77c3795 second commit
+* 5437e66 (origin/master) first commit
+
+c:\git tutorial>
+c:\git tutorial>
+c:\git tutorial> git branch dev
+
+c:\git tutorial>git chekout dev
+git: 'chekout' is not a git command. See 'git --help'.
+
+The most similar command is
+        checkout
+
+c:\git tutorial>git checkout dev
+Switched to branch 'dev'
+M       index.html
+
+c:\git tutorial> git branch
+* dev
+  master
+
+c:\git tutorial> git status
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        branching.txt
+        cmd code.txt
+        demo.js
+
+
+c:\git tutorial> git add .
+
+c:\git tutorial>git commit -m "dev branch change"
+[dev 88804f3] dev branch change
+ 4 files changed, 144 insertions(+), 2 deletions(-)
+ create mode 100644 branching.txt
+ create mode 100644 cmd code.txt
+ create mode 100644 demo.js
+
+c:\git tutorial>git status
+On branch dev
+nothing to commit, working tree clean
+
+c:\git tutorial> git log --graph --oneline
+* 88804f3 (HEAD -> dev) dev branch change
+* e0e9a4f (master) some file add and deleted
+* 77c3795 second commit
+* 5437e66 (origin/master) first commit
+
+c:\git tutorial> git log --graph --oneline --all
+* 88804f3 (HEAD -> dev) dev branch change
+* e0e9a4f (master) some file add and deleted
+* 77c3795 second commit
+* 5437e66 (origin/master) first commit
+
+c:\git tutorial> git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+c:\git tutorial> git merge dev
+Updating e0e9a4f..88804f3
+Fast-forward
+ branching.txt |   7 ++++
+ cmd code.txt  | 127 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ demo.js       |   5 +++
+ index.html    |   7 +++-
+ 4 files changed, 144 insertions(+), 2 deletions(-)
+ create mode 100644 branching.txt
+ create mode 100644 cmd code.txt
+ create mode 100644 demo.js
+
+c:\git tutorial> dev branch chnage
+'dev' is not recognized as an internal or external command,
+operable program or batch file.
+
+c:\git tutorial> git status
+On branch master
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+c:\git tutorial> git log
+commit 88804f3605ca39a3d1f750f571d5cf547b4584a1 (HEAD -> master, dev)
+Author: mujtaba <lodhamujtaba@gmail.com>
+Date:   Sun Aug 6 16:54:51 2023 +0530
+
+    dev branch change
+
+commit e0e9a4fbad391649fd23eac0e9092a013f7b8a7f
+Author: mujtaba <lodhamujtaba@gmail.com>
+Date:   Sun Aug 6 15:36:27 2023 +0530
+
+    some file add and deleted
+
+commit 77c37951aea5aee66bdf465054ffa1479abd1987
+Author: mujtaba <lodhamujtaba@gmail.com>
+Date:   Sun Aug 6 15:30:19 2023 +0530
+
+    second commit
+
+commit 5437e6607993118b2bd2ae89ee067b9f37ce7725 (origin/master)
+Author: mujtaba <lodhamujtaba@gmail.com>
+Date:   Sun Aug 6 13:52:21 2023 +0530
+
+    first commit
+
+c:\git tutorial> git log --graph --oneline --all
+* 88804f3 (HEAD -> master, dev) dev branch change
+* e0e9a4f some file add and deleted
+* 77c3795 second commit
+* 5437e66 (origin/master) first commit
+
+c:\git tutorial> git log --graph --oneline --all
+* 4b203ce (HEAD -> master) dev title changing
+* 88804f3 (dev) dev branch change
+* e0e9a4f some file add and deleted
+* 77c3795 second commit
+* 5437e66 (origin/master) first commit
+
+c:\git tutorial> git log --graph --oneline --all
+* da2187a (HEAD -> dev) dev titile change
+| * 4b203ce (master) dev title changing
+|/
+* 88804f3 dev branch change
+* e0e9a4f some file add and deleted
+* 77c3795 second commit
+* 5437e66 (origin/master) first commit
+
+c:\git tutorial> git branch
+* dev
+  master
+
+c:\git tutorial>git  merge dev
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+
+c:\git tutorial> git log --graph --oneline --all
+*   eca5480 (HEAD -> master) Merge branch 'dev':titile change merged
+|\
+| * da2187a (dev) dev titile change
+* | 4b203ce dev title changing
+|/
+* 88804f3 dev branch change
+* e0e9a4f some file add and deleted
+* 77c3795 second commit
+* 5437e66 (origin/master) first commit
+
+c:\git tutorial> git log --graph --oneline --all
+*   eca5480 (HEAD -> master) Merge branch 'dev':titile change merged
+|\
+| * da2187a (dev) dev titile change
+* | 4b203ce dev title changing
+|/
+* 88804f3 dev branch change
+* e0e9a4f some file add and deleted
+* 77c3795 second commit
+* 5437e66 (origin/master) first commit
+
+c:\git tutorial>git branch -d dev
+Deleted branch dev (was da2187a).
+
+c:\git tutorial> git log --graph --oneline --all
+*   eca5480 (HEAD -> master) Merge branch 'dev':titile change merged
+|\
+| * da2187a dev titile change
+* | 4b203ce dev title changing
+|/
+* 88804f3 dev branch change
+* e0e9a4f some file add and deleted
+* 77c3795 second commit
+* 5437e66 (origin/master) first commit
+
+c:\git tutorial> git status
+On branch master
+Your branch is ahead of 'origin/master' by 6 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test.js
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+c:\git tutorial> git add .
+
+c:\git tutorial> git status
+On branch master
+Your branch is ahead of 'origin/master' by 6 commits.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+        new file:   test.js
+
+
+c:\git tutorial>git stash
+Saved working directory and index state WIP on master: eca5480 Merge branch 'dev':titile change merged
+
+c:\git tutorial> git status
+On branch master
+Your branch is ahead of 'origin/master' by 6 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+c:\git tutorial> git stash apply
+On branch master
+Your branch is ahead of 'origin/master' by 6 commits.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   test.js
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+
+c:\git tutorial> git  add index.html
+
+c:\git tutorial> git status
+On branch master
+Your branch is ahead of 'origin/master' by 6 commits.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+        new file:   test.js
+
+
+c:\git tutorial> git log
+commit 216f2866661c7ae0a6a994c0cb8ba16c03b5ae54 (HEAD -> master)
+Author: mujtaba <lodhamujtaba@gmail.com>
+Date:   Mon Aug 7 10:12:54 2023 +0530
+
+    commiting stashed chnages
+
+commit eca5480858ff2bd46cf955edb7059c227d771782
+Merge: 4b203ce da2187a
+Author: mujtaba <lodhamujtaba@gmail.com>
+Date:   Mon Aug 7 09:59:35 2023 +0530
+
+    Merge branch 'dev':titile change merged
+
+commit da2187ae9a1d7e91e8791f6f5c5fe2c869067e24
+Author: mujtaba <lodhamujtaba@gmail.com>
+Date:   Mon Aug 7 09:54:00 2023 +0530
+
+    dev titile change
+
+commit 4b203ce7da1f95f48251704a89ef055a1449fd95
+Author: mujtaba <lodhamujtaba@gmail.com>
+Date:   Mon Aug 7 09:51:20 2023 +0530
+
+    dev title changing
+
+commit 88804f3605ca39a3d1f750f571d5cf547b4584a1
+Author: mujtaba <lodhamujtaba@gmail.com>
+Date:   Sun Aug 6 16:54:51 2023 +0530
+
+    dev branch change
+
+
+c:\git tutorial> git log --oneline
+216f286 (HEAD -> master) commiting stashed chnages
+eca5480 Merge branch 'dev':titile change merged
+da2187a dev titile change
+4b203ce dev title changing
+88804f3 dev branch change
+e0e9a4f some file add and deleted
+77c3795 second commit
+5437e66 (origin/master) first commit
+
+c:\git tutorial>     
+
         
