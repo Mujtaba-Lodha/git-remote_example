@@ -1,7 +1,0 @@
-
-1:- local ---->
-    the local repository is a git repository that is stored on your computer
-
-2:- remote ---->
-    the remote repository is a git repository  that is stored on some remote computer.  
-    --> the remote repository is s=usally used by  temans as a center repository into which  which everyone pushes the changes from his local repository and from which everyone pulls changes to his local repository. 
